@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        'lobster': ["Lobster_400Regular"],
         'inter-regular': ['Inter_400Regular'],
         'inter-bold': ['Inter_700Bold'],
       },
