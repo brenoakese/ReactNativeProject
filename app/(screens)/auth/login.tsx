@@ -34,8 +34,8 @@ export default function Login() {
 
   return (
     <View className="flex h-screen items-center justify-center">
-      <Text className="text-7xl font-lobster mb-56 color-black-500">
-        Commi
+      <Text className="text-7xl font-lobster mb-36 color-black-500">
+        Commi 
         <Text className="color-sky-500">Time</Text>
          !
       </Text>

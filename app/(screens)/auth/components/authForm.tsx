@@ -39,7 +39,7 @@ export default function AuthForm({
   }
 
   return (
-    <View className="flex justify-center w-96 h-60 border rounded-[10px] px-5 border-gray-400 gap-5">
+    <View className="flex justify-center w-96 h-60 border rounded-[10px] px-5 border-gray-400 gap-5 mb-10">
       <View>
         <Text className="text-xs pb-1 font-inter-regular">Your Username</Text>
         <TextInput
