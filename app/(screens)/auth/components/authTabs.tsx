@@ -14,7 +14,7 @@ export default function AuthTabs({ onTabChange, activeTab }: AuthTabsProps) {
         </Text>
         {activeTab === "login" && <View className="h-0.5 bg-blue-500 mt-1" />}
       </TouchableOpacity>
-
+      
       <TouchableOpacity onPress={() => onTabChange("register")}>
         <Text className={`text-lg font-inter-regular ${activeTab === "register" ? "text-blue-500" : "text-gray-500"}`}>
           Sign-in

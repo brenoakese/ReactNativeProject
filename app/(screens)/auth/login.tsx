@@ -32,6 +32,11 @@ export default function Login() {
     router.push(tab === "login" ? "/auth/login" : "/auth/register");
   };
 
+
+  const LoginFetch = () => {
+    fetch
+  }
+
   return (
     <View className="flex h-screen items-center justify-center">
       <Text className="text-7xl font-lobster mb-36 color-black-500">
@@ -44,6 +49,7 @@ export default function Login() {
         buttonText="Continue"
         placeholderUser="Enter your Username"
         placeholderPassword="Enter your Password"
+        gap={5}
       />
     </View>
   );

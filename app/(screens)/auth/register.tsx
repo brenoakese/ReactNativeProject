@@ -1,10 +1,30 @@
 import { useState } from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import { useRouter } from "expo-router";
 import AuthTabs from "./components/authTabs";
 import AuthForm from "./components/authForm";
+import * as SplashScreen from "expo-splash-screen";
+import { Lobster_400Regular } from "@expo-google-fonts/lobster";
+import { useCallback } from "react";
+import { useFonts } from "expo-font";
 
 export default function Register() {
+
+  const [fontsLoaded] = useFonts({
+      Lobster_400Regular,
+    });
+  
+    const onLayoutRootView = useCallback(async () => {
+      if (fontsLoaded) {
+        await SplashScreen.hideAsync();
+      }
+    }, [fontsLoaded]);
+  
+    if (!fontsLoaded) {
+      return null;
+    }
+
+
   const [activeTab, setActiveTab] = useState("register");
   const router = useRouter();
 
@@ -31,6 +51,11 @@ export default function Register() {
 
   return (
     <View className="flex h-screen items-center justify-center">
+      <Text className="text-7xl font-lobster mb-36 color-black-500">
+              Commi 
+              <Text className="color-sky-500">Time</Text>
+               !
+            </Text>
       <AuthTabs onTabChange={handleTabChange} activeTab={activeTab} />
       <AuthForm
         buttonText="Register"
@@ -38,6 +63,8 @@ export default function Register() {
         placeholderPassword=" Ex: 123456789"
         onUsarnameChange={handleUsernameChange}
         onPasswordChange={handlePasswordChange}
+        gap={3}
+        tabType="register"
         onSubmit={handleRegister}
       />
     </View>
