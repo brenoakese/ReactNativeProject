@@ -33,9 +33,6 @@ export default function Login() {
   };
 
 
-  const LoginFetch = () => {
-    fetch
-  }
 
   return (
     <View className="flex h-screen items-center justify-center">
@@ -49,7 +46,8 @@ export default function Login() {
         buttonText="Continue"
         placeholderUser="Enter your Username"
         placeholderPassword="Enter your Password"
-        gap={5}
+        gap={16}
+        tabType="login"
       />
     </View>
   );

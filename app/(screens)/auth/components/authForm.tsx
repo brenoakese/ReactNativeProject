@@ -13,7 +13,8 @@ interface AuthFormProps {
   placeholderPassword: string;
   tabType?: string;
   gap: number;
-  onUsarnameChange?: (username: string) => void;
+  onEmailChange?: (email: string) => void;
+  onUsernameChange?: (username: string) => void;
   onPasswordChange?: (password: string) => void;
   onSubmit?: () => void;
 }
@@ -23,7 +24,8 @@ export default function AuthForm({
   placeholderUser,
   placeholderPassword,
   tabType,
-  onUsarnameChange,
+  onEmailChange,
+  onUsernameChange,
   onPasswordChange,
   onSubmit,
   gap,
@@ -44,7 +46,7 @@ export default function AuthForm({
 
   return (
     <View
-      className={`flex justify-center w-96 h-60 border rounded-[10px] px-5 border-gray-400 gap-${gap}  mb-10`}
+      className={`flex justify-center w-96 h-60 border rounded-[10px] px-5 border-gray-400 mb-10`} style={{gap: gap }}
     >
       {tabType === "register" && (
         <View>
@@ -53,6 +55,7 @@ export default function AuthForm({
             className="border rounded-[5px] h-7"
             placeholder="Enter your Email"
             placeholderTextColor={"#B3B3B3"}
+            onChangeText={onEmailChange}
           />
         </View>
       )}
@@ -63,7 +66,7 @@ export default function AuthForm({
           className="border rounded-[5px] h-7"
           placeholder={placeholderUser}
           placeholderTextColor={"#B3B3B3"}
-          onChangeText={onUsarnameChange}
+          onChangeText={onUsernameChange}
         />
       </View>
       <View>
@@ -79,7 +82,9 @@ export default function AuthForm({
 
       <TouchableOpacity
         onPress={onSubmit}
-        className="flex items-center justify-center h-8 bg-[#648DDB] rounded"
+        className={`flex items-center justify-center h-8 bg-[#648DDB] rounded ${
+          tabType === "login" ? "mt-8" : ""
+        }`}
       >
         <Text className="text-white font-inter-regular">{buttonText}</Text>
       </TouchableOpacity>
