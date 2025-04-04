@@ -57,7 +57,7 @@ export default function Register() {
 
       const userData = {
         email: email,
-        username: username,
+        name: username,
         password: password,
       };
 
