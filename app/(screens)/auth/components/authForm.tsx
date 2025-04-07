@@ -9,7 +9,6 @@ SplashScreen.preventAutoHideAsync();
 
 interface AuthFormProps {
   buttonText: string;
-  placeholderUser: string;
   placeholderPassword: string;
   tabType?: string;
   gap: number;
@@ -21,7 +20,6 @@ interface AuthFormProps {
 
 export default function AuthForm({
   buttonText,
-  placeholderUser,
   placeholderPassword,
   tabType,
   onEmailChange,
@@ -46,7 +44,8 @@ export default function AuthForm({
 
   return (
     <View
-      className={`flex justify-center w-96 h-60 border rounded-[10px] px-5 border-gray-400 mb-10`} style={{gap: gap }}
+      className={`flex justify-center w-96 h-60 border rounded-[10px] px-5 border-gray-400 mb-10`}
+      style={{ gap: gap }}
     >
       {tabType === "register" && (
         <View>
@@ -61,12 +60,14 @@ export default function AuthForm({
       )}
 
       <View>
-        <Text className="text-xs pb-1 font-inter-regular">Your Username</Text>
+        <Text className="text-xs pb-1 font-inter-regular">
+          {tabType === "login" ? "Your email" : "Your Username"}
+        </Text>
         <TextInput
           className="border rounded-[5px] h-7"
-          placeholder={placeholderUser}
+          placeholder={tabType === "login" ? "Entrou Your Email" : "Ex: John12345"}
           placeholderTextColor={"#B3B3B3"}
-          onChangeText={onUsernameChange}
+          onChangeText={tabType === "login" ? onEmailChange : onUsernameChange}
         />
       </View>
       <View>

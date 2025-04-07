@@ -97,7 +97,6 @@ export default function Register() {
       <AuthTabs onTabChange={handleTabChange} activeTab={activeTab} />
       <AuthForm
         buttonText="Register"
-        placeholderUser=" Ex: John123"
         placeholderPassword=" Ex: 123456789"
         onEmailChange={handleEmailChange}
         onUsernameChange={handleUsernameChange}
