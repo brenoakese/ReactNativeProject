@@ -71,7 +71,6 @@ export default function Login() {
       const data = await response.json();
 
       if (response.ok) {
-        alert("Login realizado com sucesso");
         router.push("/home");
       } else {
         alert("Erro ao realizar login");
