@@ -28,7 +28,7 @@ export default function BottomNavBar() {
   ];
 
   return (
-    <View className="absolute bottom-0 border-t h-16 w-full border-gray-300 rounded-t-md flex-row shadow-md">
+    <View className="absolute bottom-0 border-t h-16 w-full border-gray-300 rounded-t-md flex-row shadow-md bg-white">
       {NavBarArray.map((item, index) => (
         <TouchableOpacity
           key={index}
